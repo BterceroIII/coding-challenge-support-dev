@@ -171,7 +171,7 @@ export default function Dashboard() {
       </main>
 
       {/* Mobile Sticky Footer */}
-      <div className="md:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)] p-4 flex justify-around items-center z-50">
+      <div className="md:hidden left-0 right-0 bg-white border-t border-gray-200 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)] p-4 flex justify-around items-center z-50">
         <div className="flex flex-col items-center text-blue-600">
           <Clock className="w-6 h-6 mb-1" />
           <span className="text-xs font-medium">Pendientes</span>
