@@ -56,8 +56,9 @@ export default function Dashboard() {
         
         const ticketIndex = tickets.findIndex((t) => t.id === updatedTicket.id)
         if (ticketIndex !== -1) {
-          tickets[ticketIndex] = updatedTicket
-          setTickets(tickets) // React no verá esto como un cambio de estado válido
+          setTickets((prev) =>
+            prev.map((t) => (t.id === updatedTicket.id ? updatedTicket : t))
+          )
         }
       }
     } catch (error) {
