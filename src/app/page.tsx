@@ -88,7 +88,7 @@ export default function Dashboard() {
       </header>
 
       {/* Main Content */}
-      <main className="max-w-3xl mx-auto px-4 py-6">
+      <main className="max-w-3xl mx-auto px-4 pt-6 pb-28 md:pb-6">
         <div className="mb-6 flex justify-between items-end">
           <div>
             <h2 className="text-2xl font-bold text-gray-800">Tickets Asignados</h2>
@@ -142,7 +142,7 @@ export default function Dashboard() {
                 <h3 className="text-lg font-semibold text-gray-900 mb-1">{ticket.title}</h3>
                 <p className="text-gray-600 text-sm mb-4">{ticket.description}</p>
 
-                <div className="flex justify-between items-center mt-4 pt-4 border-t border-gray-100">
+                <div className="flex flex-col gap-3 sm:flex-row sm:justify-between sm:items-center mt-4 pt-4 border-t border-gray-100">
                   <span className="text-xs text-gray-400">
                     Creado hace {formatDistanceToNow(new Date(ticket.createdAt), { locale: es })}
                   </span>
@@ -151,7 +151,7 @@ export default function Dashboard() {
                     <button
                       onClick={() => handleResolve(ticket)}
                       disabled={resolvingId === ticket.id}
-                      className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium rounded-md shadow-sm transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
+                      className="w-full sm:w-auto justify-center px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium rounded-md shadow-sm transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
                     >
                       {resolvingId === ticket.id ? (
                         <>
@@ -171,7 +171,7 @@ export default function Dashboard() {
       </main>
 
       {/* Mobile Sticky Footer */}
-      <div className="md:hidden left-0 right-0 bg-white border-t border-gray-200 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)] p-4 flex justify-around items-center z-50">
+      <div className="md:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)] p-4 flex justify-around items-center z-50">
         <div className="flex flex-col items-center text-blue-600">
           <Clock className="w-6 h-6 mb-1" />
           <span className="text-xs font-medium">Pendientes</span>
