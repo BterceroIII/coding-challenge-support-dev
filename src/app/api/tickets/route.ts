@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server'
 import { prisma } from '@/lib/prisma'
 
+// TODO: Implement a login authentication system to identify the current company
 const CURRENT_COMPANY_ID = 'TechCorp'
 
 export async function GET() {
