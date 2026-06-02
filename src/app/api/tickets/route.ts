@@ -1,9 +1,12 @@
 import { NextResponse } from 'next/server'
 import { prisma } from '@/lib/prisma'
 
+const CURRENT_COMPANY_ID = 'TechCorp'
+
 export async function GET() {
   try {
     const tickets = await prisma.ticket.findMany({
+      where: { companyId: CURRENT_COMPANY_ID },
       orderBy: { createdAt: 'desc' },
     })
 
