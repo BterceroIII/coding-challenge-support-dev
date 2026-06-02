@@ -24,11 +24,13 @@ export default function Dashboard() {
 
   useEffect(() => {
     fetchTickets()
+    const interval = setInterval(fetchTickets, 10000)
+    return () => clearInterval(interval)
   }, [])
 
   const fetchTickets = async () => {
     try {
-      const res = await fetch("/api/tickets")
+      const res = await fetch(`/api/tickets`)
       const data = await res.json()
       setTickets(data)
     } catch (error) {
